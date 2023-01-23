@@ -9,4 +9,3 @@
 - copie um link e clique em "download"
 - para baixar mais de um link clique em "adicionar"
 - caso queria converter todos para mp3, clique em "converter"
-- 
