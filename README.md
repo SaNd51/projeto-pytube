@@ -9,19 +9,18 @@
 
 ### Siga os passos
 > Primeiro abra o executável na pasta <init/dist/janela.exe>. 
-<div align="center"> 
-<img src="https://user-images.githubusercontent.com/84827866/230143317-c4e79ac7-1b86-4bc3-93c4-f1eeb5089037.png" width="320px">
+<img src="https://user-images.githubusercontent.com/84827866/230143317-c4e79ac7-1b86-4bc3-93c4-f1eeb5089037.png" width="240px">
 
 > Depois adicione um link para download.
 
-<img src="https://user-images.githubusercontent.com/84827866/230143318-5842c538-021a-4bef-b9ee-d2225757afa3.png" width="320px">
+<img src="https://user-images.githubusercontent.com/84827866/230143318-5842c538-021a-4bef-b9ee-d2225757afa3.png" width="240px">
 
 > Clique em "baixar" e caso queira apenas o áudio use "converter".
-<img src="https://user-images.githubusercontent.com/84827866/230143317-c4e79ac7-1b86-4bc3-93c4-f1eeb5089037.png" width="320px">
+<img src="https://user-images.githubusercontent.com/84827866/230143320-3b9ff078-8037-48bf-a297-6176deb118b2.png" width="240px">
 
 > Para baixar mais de uma música use "adicionar".
-<img src="https://user-images.githubusercontent.com/84827866/230143322-aa50fe8c-d956-453d-ad36-dc9af8624da4.png" width="320px">
-</div>
+<img src="https://user-images.githubusercontent.com/84827866/230143322-aa50fe8c-d956-453d-ad36-dc9af8624da4.png" width="240px">
+
 ### Notas
 
 * ainda em fase de testes
