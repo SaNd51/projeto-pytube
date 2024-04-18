@@ -22,7 +22,7 @@ def baixar_V(yt):
     
     
 def f1(link):              
-    yt = YouTube(link)
+    yt = YouTube(link,use_oauth = True, allow_oauth_cache=True)
     yt = yt.streams.get_highest_resolution()
     baixar_V(yt)
     
