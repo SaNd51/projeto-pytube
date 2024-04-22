@@ -1,4 +1,4 @@
-## Projeto Pytube ▶ 
+## Projeto Pytube 🎵 
 
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&duration=5250&pause=1000&color=8B0000&size=40%&center=true&vCenter=true&width=1000&lines=Download+de+videos;no+YouTube)](https://git.io/typing-svg)
 
@@ -8,7 +8,7 @@
 </div>
 
 ### Siga os passos
-> Primeiro abra o executável na pasta <init/dist/tela.exe>. 
+> Primeiro abra o executável na pasta <init/dist/janela.exe>. 
 
 > Depois adicione um link para download.
 
