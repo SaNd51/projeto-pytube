@@ -8,7 +8,7 @@
 </div>
 
 ### Siga os passos
-> Primeiro abra o executável na pasta <init/dist/tela.exe>. 
+> Primeiro abra o executável na pasta <dist/tela.exe>. 
 
 > Depois adicione um link para download.
 
