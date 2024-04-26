@@ -14,11 +14,6 @@ class tela:
         self.janela.resizable(width=FALSE, height=FALSE)
     pass
 
-class C:
-    def __init__(self):
-        self.c = caminho()
-        os.chdir(self.c)
-    pass 
 
 p = os.getcwd() 
 janela = tela().janela
@@ -32,13 +27,16 @@ def caminho():
     if not os.path.exists(r):
         os.mkdir(r)        
     return r
+
+os.chdir(caminho())
+
 def baixar_P(videos):  
     print('Downloads: ' + videos.title)
-    videos.streams.filter(progressive=True).order_by('resolution').desc().first().download(C().c)
+    videos.streams.filter(progressive=True).order_by('resolution').desc().first().download(caminho())
        
 def baixar_V(yt):
     print('Download: ' + yt.title)
-    yt.download(C().c)
+    yt.download(caminho())
        
 def f1(link,n,x):              
     l = ttk.Progressbar(janela, style=s, variable=b, maximum=n)
@@ -50,7 +48,7 @@ def f1(link,n,x):
     janela.update()
 
     def cria_pasta():
-        new_folder = C().c + '\\video\\'
+        new_folder = caminho() + '\\video\\'
         if not os.path.exists(new_folder): os.mkdir(new_folder) 
         return new_folder
     
@@ -76,7 +74,7 @@ def f2(link):
     l = ''.join(map(str, l)); pasta = f'{l}\\'
                          
     def cria_pasta():
-        folder = C().c + '\\playlist\\'         
+        folder = caminho() + '\\playlist\\'         
         if not os.path.exists(folder): os.mkdir(folder)    
         new_folder = folder + pasta
         if not os.path.exists(new_folder): os.mkdir(new_folder) 
