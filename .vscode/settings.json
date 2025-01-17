@@ -1,0 +1,5 @@
+{
+    "python.analysis.typeCheckingMode": "basic",
+    "python.pythonPath": "venv/Scripts/activate",
+    "python.analysis.autoImportCompletions": true
+}
