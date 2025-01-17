@@ -22,4 +22,4 @@
 
 ### Notas
 
-* ainda em fase de testes
+* Não houve mais suporte para dowloads, pois foi descontinuado por conta das proteções do Youtube atualmente.
