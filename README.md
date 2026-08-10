@@ -8,18 +8,36 @@
 </div>
 
 ### Siga os passos
-> Primeiro abra o executável na pasta <init/dist/tela.exe>. 
+> Primeiro abra o executável na pasta <>. 
 
 > Depois adicione um link para download.
 
-<img src="https://user-images.githubusercontent.com/84827866/230143318-5842c538-021a-4bef-b9ee-d2225757afa3.png" width="240px">
+<img width="402" height="373" alt="Image" src="https://github.com/user-attachments/assets/d053afaf-1a2a-4154-bcf2-9caadf379d96" />
 
 > Clique em "baixar" e caso queira apenas o áudio use "converter".
-<img src="https://user-images.githubusercontent.com/84827866/230143320-3b9ff078-8037-48bf-a297-6176deb118b2.png" width="240px">
 
 > Para baixar mais de uma música use "adicionar".
-<img src="https://user-images.githubusercontent.com/84827866/230143322-aa50fe8c-d956-453d-ad36-dc9af8624da4.png" width="240px">
 
-### Notas
+### Notas da versão
+* Python 3.14.6
+* Nova versão dos arquivos "converter.py", "downloads.py", "gerenciar.py", "tela.py", "setup.py", atualização das bibliotecas e do pip
 
-* ainda em fase de testes
+> pip list
+* Package       Version
+------------- --------
+cabarchive    0.2.5
+cx_Freeze     8.6.4
+filelock      3.32.2
+freeze-core   0.6.1
+idna          3.18
+lief          0.17.6
+packaging     26.2
+pillow        12.3.0
+pip           26.2
+python-msilib 0.6.0
+setuptools    82.0.1
+striprtf      0.0.32
+yt-dlp        2026.7.4
+
+> pip -V
+* pip 26.2
