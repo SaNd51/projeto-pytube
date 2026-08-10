@@ -13,7 +13,7 @@ options = {
 }
 
 setup(
-    name = "teste",
+    name = "Pytube-Sander",
     options = options,
     version = "1",
     description = '<any description>',

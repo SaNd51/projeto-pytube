@@ -1,8 +1,10 @@
-from pytube import Playlist, YouTube
-from tkinter import * 
+from yt_dlp import YoutubeDL  # type: ignore
+from tkinter import *  # type: ignore
 from tkinter import ttk
 from converter import *
-import os, re
+import os
+import re
+
 
 class tela:
     def __init__(self):
@@ -12,76 +14,59 @@ class tela:
         self.janela.geometry("400x340")
         self.janela.configure(bg="#9C2520")
         self.janela.resizable(width=FALSE, height=FALSE)
-    pass
 
 
-p = os.getcwd() 
+p = os.getcwd()
 janela = tela().janela
 color = ["#2F4F4F", "#9C1520", "#B0E0E6", "#1B20D6"]
-s = ttk.Style().configure('barra', background=color[0], foreground=color[0], thickness=40)
+ttk.Style().configure('barra', background=color[0], foreground=color[0], thickness=40)
 b = DoubleVar()
 b.set(0)
 
-def caminho():    
-    r = p + '\\music'      
+
+def caminho():
+    r = os.path.join(p, 'music')
     if not os.path.exists(r):
-        os.mkdir(r)        
+        os.makedirs(r, exist_ok=True)
     return r
+
 
 os.chdir(caminho())
 
-def baixar_P(videos):  
-    print('Downloads: ' + videos.title)
-    videos.streams.filter(progressive=True).order_by('resolution').desc().first().download(caminho())
-       
-def baixar_V(yt):
-    print('Download: ' + yt.title)
-    yt.download(caminho())
-       
-def f1(link,n,x):              
-    l = ttk.Progressbar(janela, style=s, variable=b, maximum=n)
+
+def baixar_V(url):
+    print('Download: ' + url)
+    opcoes = {
+        'outtmpl': os.path.join(caminho(), '%(title)s.%(ext)s'),
+        'format': 'best',
+        'quiet': True,
+        'noplaylist': True,
+    }
+
+    with YoutubeDL(opcoes) as ydl:  # type: ignore
+        ydl.download([url])
+
+
+def f1(link, n, x):
+    l = ttk.Progressbar(janela, style='TProgressbar', variable=b, maximum=max(1, n))
     l.place(width=200, height=20, x=100, y=250)
-    yt = YouTube(link,use_oauth = True, allow_oauth_cache=True)
-    yt = yt.streams.get_highest_resolution()
-    baixar_V(yt)
+
+    baixar_V(link)
+
     b.set(x)
     janela.update()
 
     def cria_pasta():
-        new_folder = caminho() + '\\video\\'
-        if not os.path.exists(new_folder): os.mkdir(new_folder) 
+        new_folder = os.path.join(caminho(), 'video')
+        if not os.path.exists(new_folder):
+            os.makedirs(new_folder, exist_ok=True)
         return new_folder
-    
-    for file in os.listdir():
-        if re.search(r'\.mp4$',file):           
-            os.rename(file, cria_pasta() + file)
+
+    for file in os.listdir(caminho()):
+        if re.search(r'\.mp4$', file):
+            os.rename(
+                os.path.join(caminho(), file),
+                os.path.join(cria_pasta(), file)
+            )
           
-def f2(link):   
-    p = Playlist(link)
-    x,cont = len(p.video_urls), 0
-    for videos in p.videos:
-        l = ttk.Progressbar(janela, style=s, variable=b, maximum=100)
-        l.place(width=200, height=20, x=100, y=250)
-        baixar_P(videos)
-        cont += 1
-        n = (cont/x)*100
-        b.set(n)
-        janela.update()
-            
-    l = list(p.title)
-    for i in l:
-        if i == (('/') or  (':') or ('|')):l.remove(i) 
-    l = ''.join(map(str, l)); pasta = f'{l}\\'
-                         
-    def cria_pasta():
-        folder = caminho() + '\\playlist\\'         
-        if not os.path.exists(folder): os.mkdir(folder)    
-        new_folder = folder + pasta
-        if not os.path.exists(new_folder): os.mkdir(new_folder) 
-                
-        return new_folder
-                    
-    for file in os.listdir():
-        if re.search(r'\.mp4$',file): os.rename(file, cria_pasta() + file)
-        print(f'Movendo arquivo "{file}"')
     
